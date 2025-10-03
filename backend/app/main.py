@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from backend.app.routes import documents  # adjust the import if documents.py is in another folder
+from backend.app.routes import documents, chatbot
 
 app = FastAPI(
     title="Finance Document Processor",
@@ -7,5 +7,5 @@ app = FastAPI(
     description="Extracts and normalizes financial documents using LandingAI + Pathway"
 )
 
-# Include your documents router
 app.include_router(documents.router, prefix="", tags=["documents"])
+app.include_router(chatbot.router)
