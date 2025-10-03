@@ -1,0 +1,17 @@
+{
+  "name": "manage-ui-quickstart",
+  "version": "0.1.0",
+  "description": "Manage UI for agents",
+  "type": "module", 
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "devDependencies": {
+    "next": "^15.5.4"
+  },
+  "engines": {
+    "node": ">=22.x"
+  }
+}
