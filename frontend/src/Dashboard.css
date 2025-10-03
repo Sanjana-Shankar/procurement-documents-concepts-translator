@@ -1,52 +1,23 @@
-/* .dashboard-container {
-  background-color: var(--lighter-primary);
-  min-height: 100vh;
-  width: 100vw;
-  box-sizing: border-box;
-  margin: 0px;
-  padding: 0;
-} */
-
 .dashboard-container {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.data-layout {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  width: 800px;
-  height: 800px;
-  margin: 60px 0px;
-  /* height: 100%; */
+  @apply flex flex-col items-center justify-start min-h-screen 
+         bg-gradient-to-b from-blue-50 via-white to-blue-100 
+         text-gray-800 px-6 py-10;
 }
 
 .dashboard-text {
-  font-size: xx-large;
+  @apply text-3xl font-bold mb-8 text-blue-700 drop-shadow;
 }
 
 .dashboard-info {
-  align-items: center;
-  justify-content: center;
+  @apply w-full max-w-2xl bg-white shadow-lg rounded-xl p-6 
+         flex flex-col gap-4;
 }
 
-.dashboard-info p {
-  font-size: x-large;
-  font-weight: bold;
+.data-layout {
+  @apply border border-gray-200 rounded-lg p-4 bg-gray-50 min-h-[150px];
 }
 
 .export-button {
-  margin-bottom: 100px;
-}
-
-@media screen and (max-width: 768px) {
-  .data-layout {
-    width: 600px;
-    /* height: 800px; */
-    /* height: 100%; */
-  }
+  @apply self-end mt-4 px-6 py-2 rounded-lg bg-blue-600 text-white 
+         font-semibold shadow hover:bg-blue-700 transition-all;
 }

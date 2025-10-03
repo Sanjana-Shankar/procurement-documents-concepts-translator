@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.landing-container {
+  @apply flex flex-col items-center justify-center min-h-screen 
+         bg-gradient-to-b from-blue-100 via-white to-blue-50 
+         text-gray-800 px-4;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.landing-title {
+  @apply text-7xl font-extrabold text-gray-900 leading-tight mb-6;
+  color: black; /* keep "Welcome to" in black */
+  animation: fadeInUp 1s ease-out;
+}
+
+.intro-message {
+  width: 1200px;
+}
+
+.app-gradient {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(to right, #a1c4fd, #a0cbdf, #b4b0de);
+}
+
+.landing-subtitle {
+  /* @apply text-lg mb-8 text-gray-600; */
+  @apply text-2xl font-bold text-gray-600 mb-8;
+  animation: fadeInUp 1.3s ease-out;
+}
+
+.upload-btn {
+  @apply px-6 py-3 rounded-xl bg-blue-600 text-white 
+         text-lg font-semibold shadow-md 
+         hover:bg-blue-700 transition-all;
+  background: linear-gradient(to right, #a1c4fd, #a0cbdf, #b4b0de);
+  animation: fadeInUp 1.6s ease-out;
+}
+
+@media screen and (max-width: 768px) {
+  .intro-message {
+    width: 80%;
+  }
+  .landing-title {
+    @apply text-5xl font-extrabold text-gray-900 leading-tight mb-6;
+    color: black; /* keep "Welcome to" in black */
+    animation: fadeInUp 1s ease-out;
+  }
+  .landing-subtitle {
+    /* @apply text-lg mb-8 text-gray-600; */
+    @apply text-lg font-bold text-gray-600 mb-8;
+  }
+}
