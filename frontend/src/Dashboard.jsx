@@ -1,6 +1,7 @@
 // Dashboard.jsx
 import React, { useEffect, useState } from 'react'
 import {useNavigate} from 'react-router-dom'
+import "./Dashboard.css"
 
 // Dashboard.jsx
 
@@ -23,12 +24,13 @@ function Dashboard({ uploadedFile }) {
 //   if (!uploadedFile) return <p>No file uploaded.</p>;
 
   return (
-    <div className="p-6">
-      <h2 className="text-2xl font-bold mb-4">Dashboard</h2>
-      <div className="bg-gray-100 p-4 rounded">
-        <p><strong>File Name:</strong> {parsedData?.name}</p>
-        <p><strong>Type:</strong> {parsedData?.type}</p>
-        <p><strong>Size:</strong> {parsedData?.size}</p>
+    <div className="dashboard-container">
+      <h2 className="dashboard-text">Dashboard</h2>
+      <div className="dashboard-info">
+        <p>Data</p>
+        <div className="data-layout"></div>
+        <button className="export-button">Export Data</button>
+        
       </div>
     </div>
   );
