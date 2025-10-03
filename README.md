@@ -39,15 +39,14 @@ cd procurement-spend-normalizer
 ```
 ### 2️⃣ Backend Setup (FastAPI)
 #### Create virtual environment
-```bash
+##### macOS/Linux 
+```
 python3 -m venv venv
-```
-```
-# macOS/Linux
 source venv/bin/activate   
 ```
+##### Windows
 ```
-# Windows
+python3 -m venv venv
 venv\Scripts\activate      
 ```
 #### Install dependencies
@@ -62,16 +61,16 @@ pip install psycopg2-binary
 
 #### Run backend
 ```bash
+# Backend runs at: http://127.0.0.1:8000
 uvicorn backend.main:app --reload
-## Backend runs at: http://127.0.0.1:8000
 ```
 
 ### 3️⃣ Frontend Setup (React)
 ```bash
+# Frontend runs at: http://localhost:5173 (or CRA default http://localhost:3000).
 cd frontend
 npm install
 npm run dev
-# Frontend runs at: http://localhost:5173 (or CRA default http://localhost:3000).
 ```
 
 ### 📂 Project Structure
