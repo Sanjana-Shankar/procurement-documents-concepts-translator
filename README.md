@@ -7,6 +7,19 @@ This app extracts data from scanned invoices, normalizes cost categories, and pr
 
 Additionally, the app includes a **Q&A chatbot** powered by Pathway’s Retrieval-Augmented Generation (RAG) framework, allowing users to clarify finance terms and navigate spend data interactively.
 
+## Problem Statement
+
+Finance teams at growing startups and enterprises often face a common challenge: managing messy, unstructured procurement data. Invoices, receipts, and purchase orders arrive in multiple formats with inconsistent terminology—think “Freight,” “Logistics,” and “Shipping” all referring to the same category. Manually cleaning, categorizing, and analyzing this data is time-consuming, error-prone, and inefficient.
+
+The Procurement Spend Normalizer solves this problem by automatically extracting, cleaning, and normalizing procurement data, mapping inconsistent terms into unified spend categories. Beyond simple data cleaning, it provides a smart, interactive chatbot that allows finance teams to ask natural language questions like:
+
+“Which invoices had professional services over $3,000?”
+
+“How much did we spend on Transportation last quarter?”
+
+The system flags anomalies and high-value spend, links every answer back to the original line items for auditing, and exports data as clean Excel sheets or dashboards.
+
+With the Procurement Spend Normalizer, finance teams can turn chaotic piles of documents into actionable intelligence in seconds—reducing manual work, improving spend visibility, and enabling faster, data-driven decisions
 ---
 
 ## 🚀 Features
