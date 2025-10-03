@@ -33,8 +33,6 @@ Additionally, the app includes a **Q&A chatbot** powered by Pathway’s Retrieva
 ## ⚙️ Installation & Setup
 
 ### 1️⃣ Clone the repo
-```bash
-```
 ```
 git clone https://github.com/your-org/procurement-spend-normalizer.git
 cd procurement-spend-normalizer
