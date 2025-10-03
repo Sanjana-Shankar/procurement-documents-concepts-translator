@@ -1,0 +1,90 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0; /* shorthand for top:0; right:0; bottom:0; left:0 */
+  /* background: rgba(0, 0, 0, 0.5); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.modal-container {
+  background-color: var(--lighter-primary);
+  position: fixed;
+  border-radius: 12px;
+
+  height: 600px;
+  width: 700px;
+  padding: 20px;
+
+  color: black;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drag-area {
+  background-color: white;
+  padding: 20px;
+  height: 350px;
+  width: 600px;
+  margin-bottom: 80px;
+
+  border: 2px dashed;
+  border-color: var(--dark-primary);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.drag-area p {
+  font-size: x-large;
+}
+
+.browse-button {
+  width: 150px;
+  color: var(--primary-color);
+  background-color: white;
+  border: 2px solid;
+}
+
+.browse-button:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.cancel-button {
+  margin-bottom: 20px;
+  color: var(--light-primary);
+  background-color: var(--dark-primary);
+}
+
+.cancel-button:hover {
+  background-color: var(--reject-color);
+  color: black;
+}
+
+.uploadFile-hidden-input {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .modal-container {
+    height: 60%;
+    width: 80%;
+  }
+
+  .drag-area {
+    height: 60%;
+    width: 80%;
+    /* margin-bottom: 20%; */
+  }
+
+  .drag-area p {
+    font-size: large;
+  }
+}

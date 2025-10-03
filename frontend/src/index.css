@@ -7,6 +7,13 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
+  --primary-color: #90a8c3; /* base color blue */
+  --dark-primary: #788899;
+  --light-primary: #d2e5fb;
+  --lighter-primary: #edf5ff;
+  --secondary-color: #f6f6f6; /* gray */
+  --reject-color: #ffe3e3; /* red */
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
