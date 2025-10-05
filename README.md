@@ -9,6 +9,8 @@ Additionally, the app includes a **Q&A chatbot** powered by Pathway’s Retrieva
 
 ---
 
+**Link to BudgetIQ Workflow/Planning Document including Architecture Diagram:** https://docs.google.com/document/d/1dv2SZvA3Qg7oVR-oe-hMbXquL20Mb7qIhOT3HISj4NM/edit?tab=t.0#heading=h.61vnayedopd9
+
 ## 🚀 Features
 - **Document Extraction**: Uses [LandingAI](https://landing.ai/) to parse purchase orders and invoices from PDFs/scans.  
 - **Spend Normalization**: Maps inconsistent labels into unified categories (e.g., "Freight/Logistics/Shipping" → "Transportation").  
