@@ -1,11 +1,11 @@
-# Procurement Spend Normalizer
+# BudgetIQ - Clean categories, confident calls!
 
 ## 📌 Overview
-The **Procurement Spend Normalizer** is a finance-focused application that helps enterprises unify and analyze their procurement spend data.  
+**BudgetIQ** is a finance-focused application that helps enterprises unify and analyze their procurement spend data.  
 Enterprises often receive **purchase orders and invoices** in mixed formats with inconsistent naming conventions (e.g., "Freight" vs. "Logistics" vs. "Shipping").  
 This app extracts data from scanned invoices, normalizes cost categories, and provides a clean **unified spend table** for finance teams to run analytics.  
 
-Additionally, the app includes a **Q&A chatbot** powered by Pathway’s Retrieval-Augmented Generation (RAG) framework, allowing users to clarify finance terms and navigate spend data interactively.
+Additionally, the app includes a **Q&A agent** powered by Pathway’s Retrieval-Augmented Generation (RAG) framework, allowing users to clarify finance terms and navigate spend data interactively.
 
 ---
 **Link to BudgetIQ Application Demo Video:** https://drive.google.com/file/d/1K4arT4WP7wLXgnEwTZLMk363juBGw1uB/view?usp=drive_link
@@ -17,9 +17,9 @@ Additionally, the app includes a **Q&A chatbot** powered by Pathway’s Retrieva
 ## 🚀 Features
 - **Document Extraction**: Uses [LandingAI](https://landing.ai/) to parse purchase orders and invoices from PDFs/scans.  
 - **Spend Normalization**: Maps inconsistent labels into unified categories (e.g., "Freight/Logistics/Shipping" → "Transportation").  
-- **Q&A Chatbot**: Built with [Pathway RAG](https://pathway.com/), allowing users to ask questions about finance terminology and the normalized dataset.  
+- **Q&A Agent**: Built with [Pathway RAG](https://pathway.com/), allowing users to ask questions about finance terminology and the normalized dataset, and built with [Inkeep](https://inkeep.com/) which enables multiple agents to answer clients questions and export data to Google Drive as needed.
 - **Database Integration**: Store structured spend data in either **MongoDB** or **PostgreSQL**.  
-- **Frontend Dashboard**: A React UI to upload invoices, visualize normalized data, and chat with the Q&A assistant.  
+- **Frontend Dashboard**: A React UI to upload invoices, visualize normalized data, and chat with the Q&A agent.  
 
 ---
 
@@ -31,7 +31,8 @@ Additionally, the app includes a **Q&A chatbot** powered by Pathway’s Retrieva
   - Option B: PostgreSQL (via `SQLAlchemy` + `asyncpg` or `psycopg2-binary`)  
 - **AI/ML Services**:  
   - [LandingAI](https://landing.ai/) → OCR + Document parsing  
-  - [Pathway RAG](https://pathway.com/) → Finance Q&A chatbot  
+  - [Pathway RAG](https://pathway.com/) → Finance Q&A agent
+  - [Inkeep](https://inkeep.com/) → MCP Server with multiple agents
 
 ---
 
@@ -93,6 +94,8 @@ procurement-spend-normalizer/
 │   │   ├── components/
 │   │   ├── pages/
 │   │   ├── services/  # API calls to backend
+│── mcp-server/
+│    ├── my-agents/
 │── README.md
 ```
 
@@ -116,7 +119,7 @@ Normalizing inconsistent spend categories into a unified, readable table.
 
 Providing detailed expense breakdowns to give finance teams visibility into every line item.
 
-Enabling interactive queries via a Q&A chatbot for fast insights and anomaly detection.
+Enabling interactive queries via a Q&A agent for fast insights and anomaly detection.
 
 The ultimate goal is to streamline procurement analytics, maintain budget control, and prevent overspending by transforming messy invoices into actionable, organized data.
 
@@ -138,7 +141,7 @@ I can view a clean, readable spend table with detailed breakdowns per line item,
 
 The dashboard highlights high-value or unusual transactions to prevent overspending.
 
-I can ask the chatbot questions like:
+I can ask the Q&A agent questions like:
 
 “Which categories have exceeded budget limits this month?”
 
