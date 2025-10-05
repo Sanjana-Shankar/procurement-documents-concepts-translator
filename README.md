@@ -8,7 +8,10 @@ This app extracts data from scanned invoices, normalizes cost categories, and pr
 Additionally, the app includes a **Q&A agent** powered by Pathway’s Retrieval-Augmented Generation (RAG) framework, allowing users to clarify finance terms and navigate spend data interactively.
 
 ---
-**Link to BudgetIQ Application Demo Video:** https://drive.google.com/file/d/1K4arT4WP7wLXgnEwTZLMk363juBGw1uB/view?usp=drive_link
+**Link to BudgetIQ Application Demo Video:** 
+
+![Demo Video](https://github.com/user-attachments/assets/ddfe55b4-a81d-425d-a5c3-8c8bc5549c60)
+
 
 ---
 
