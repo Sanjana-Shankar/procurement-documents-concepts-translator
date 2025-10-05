@@ -11,12 +11,10 @@ function App() {
 
   return (
     <>
-      <Router>
-        <Routes>
-          <Route path="/" element={<LandingPage setUploadedFile={setUploadedFile}/>}/>
-          <Route path="/dashboard" element={<Dashboard uploadedFile={uploadedFile} />} />
-        </Routes>
-      </Router>
+      <Routes>
+        <Route path="/" element={<LandingPage setUploadedFile={setUploadedFile}/>}/>
+        <Route path="/dashboard" element={<Dashboard uploadedFile={uploadedFile} />} />
+      </Routes>
     </>
   )
 }
