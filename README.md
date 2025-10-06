@@ -109,50 +109,43 @@ procurement-spend-normalizer/
 
 ### 📝 Problem Statement
 
-Enterprises often receive messy, inconsistent invoices and purchase orders from multiple vendors. These documents may vary in format, terminology, and completeness, making it challenging for finance teams to:
+*Enterprises often receive messy, inconsistent invoices and purchase orders from multiple vendors. These documents may vary in format, terminology, and completeness, making it challenging for finance teams to:*
+- Quickly consolidate and organize procurement data into a clean, readable format.
+- Break down expenses to detailed line items to understand exactly where money is being spent.
+- Identify cost trends, anomalies, or potential overspending.
+- Generate accurate reports without extensive manual effort.
 
-Quickly consolidate and organize procurement data into a clean, readable format.
 
-Break down expenses to detailed line items to understand exactly where money is being spent.
+> BudgetIQ addresses these challenges by:
 
-Identify cost trends, anomalies, or potential overspending.
-
-Generate accurate reports without extensive manual effort.
-
-BudgetIQ addresses these challenges by:
-
-Extracting data from unstructured and messy documents using OCR.
-
-Normalizing inconsistent spend categories into a unified, readable table.
-
-Providing detailed expense breakdowns to give finance teams visibility into every line item.
-
-Enabling interactive queries via a Q&A agent for fast insights and anomaly detection.
+- Extracting data from unstructured and messy documents using OCR.
+- Normalizing inconsistent spend categories into a unified, readable table.
+- Providing detailed expense breakdowns to give finance teams visibility into every line item.
+- Enabling interactive queries via a Q&A agent for fast insights and anomaly detection.
 
 The ultimate goal is to streamline procurement analytics, maintain budget control, and prevent overspending by transforming messy invoices into actionable, organized data.
+
+---
 
 ### 👤 Sample User Story
 
 **Title: Finance Analyst wants to organize messy invoices and track detailed expenses** 
 
-As a finance analyst
+*As a finance analyst
 I want to upload messy invoices and automatically organize them into a clean, readable spend table
-So that I can break down expenses into detailed categories and avoid overspending
+So that I can break down expenses into detailed categories and avoid overspending.*
 
 Acceptance Criteria:
+*I can upload invoices in various formats (PDF, scanned images, CSV/Excel).*
 
-I can upload invoices in various formats (PDF, scanned images, CSV/Excel).
+-> The system extracts line items and normalizes inconsistent categories into unified labels (e.g., “Freight/Shipping/Logistics” → “Transportation”).
 
-The system extracts line items and normalizes inconsistent categories into unified labels (e.g., “Freight/Shipping/Logistics” → “Transportation”).
+*I can view a clean, readable spend table with detailed breakdowns per line item, vendor, and category.*
 
-I can view a clean, readable spend table with detailed breakdowns per line item, vendor, and category.
+-> The dashboard highlights high-value or unusual transactions to prevent overspending.
 
-The dashboard highlights high-value or unusual transactions to prevent overspending.
+*I can ask the Q&A agent questions like:*
+- “Which categories have exceeded budget limits this month?”
+- “Show invoices over $5,000 in Marketing or Transportation.”
 
-I can ask the Q&A agent questions like:
-
-“Which categories have exceeded budget limits this month?”
-
-“Show invoices over $5,000 in Marketing or Transportation.”
-
-I can export the normalized and detailed data to Excel for reporting and auditing.
+*I can export the normalized and detailed data to Excel for reporting and auditing.*
