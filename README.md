@@ -8,17 +8,19 @@ This app extracts data from scanned invoices, normalizes cost categories, and pr
 Additionally, the app includes a **Q&A agent** powered by Pathway’s Retrieval-Augmented Generation (RAG) framework, allowing users to clarify finance terms and navigate spend data interactively.
 
 ---
-**Link to BudgetIQ Application Demo Video:** 
+> BudgetIQ Demo Video
 
 [![Demo Video](<img width="1299" height="497" alt="Screenshot 2025-10-04 at 11 50 37 PM" src="https://github.com/user-attachments/assets/f3f1b796-7df0-4382-a8cd-7e16c4ea0f5f" />)](https://github.com/user-attachments/assets/ddfe55b4-a81d-425d-a5c3-8c8bc5549c60)
 
 
 ---
 
-**Link to BudgetIQ Workflow/Planning Document including Architecture Diagram:** 
+> BudgetIQ Workflow Architecture Diagram:
 <p align="center">
 <img width="497" height="547" alt="BudgetIQ Architecture Diagram" src="https://github.com/user-attachments/assets/8184c39c-734e-4af8-a27f-cc83c002a9c3" />
 </p>
+
+---
 
 ## 🚀 Features
 - **Document Extraction**: Uses [LandingAI](https://landing.ai/) to parse purchase orders and invoices from PDFs/scans.  
