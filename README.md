@@ -10,12 +10,13 @@ Additionally, the app includes a **Q&A agent** powered by Pathway’s Retrieval-
 ---
 **Link to BudgetIQ Application Demo Video:** 
 
-![Demo Video](https://github.com/user-attachments/assets/ddfe55b4-a81d-425d-a5c3-8c8bc5549c60)
+[![Demo Video](<img width="1299" height="497" alt="Screenshot 2025-10-04 at 11 50 37 PM" src="https://github.com/user-attachments/assets/f3f1b796-7df0-4382-a8cd-7e16c4ea0f5f" />)](https://github.com/user-attachments/assets/ddfe55b4-a81d-425d-a5c3-8c8bc5549c60)
 
 
 ---
 
-**Link to BudgetIQ Workflow/Planning Document including Architecture Diagram:** https://docs.google.com/document/d/1dv2SZvA3Qg7oVR-oe-hMbXquL20Mb7qIhOT3HISj4NM/edit?tab=t.0#heading=h.61vnayedopd9
+**Link to BudgetIQ Workflow/Planning Document including Architecture Diagram:** 
+![BudgetIQ Architecture Diagram](https://docs.google.com/document/d/1dv2SZvA3Qg7oVR-oe-hMbXquL20Mb7qIhOT3HISj4NM/edit?tab=t.0#heading=h.61vnayedopd9)
 
 ## 🚀 Features
 - **Document Extraction**: Uses [LandingAI](https://landing.ai/) to parse purchase orders and invoices from PDFs/scans.  
