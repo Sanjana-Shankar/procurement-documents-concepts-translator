@@ -7,11 +7,24 @@ import "./LandingPage.css";
 function LandingPage({ setUploadedFile }) {
   const navigate = useNavigate();
   const [showUploadModal, setShowUploadModal] = useState(false);
+  const [documentData, setDocumentData] = useState(null)
 
-  const handleFileSelect = (file) => {
-    if (file) {
-      setUploadedFile(file);
+  const handleFileSelect = (data) => {
+    console.log("✅ Extracted data received in LandingPage:", data);
+    if (data) {
+      // Save JSON response to state
+      setDocumentData(data);
+  
+      // Optional: if you also want to keep original file
+      setUploadedFile(data.originalFile || null);
+  
+      // Close the modal
       setShowUploadModal(false);
+
+      // Navigate to dashboard
+      navigate("/dashboard", { state: { data } });
+  
+      // Optional: navigate to dashboard
       // navigate("/dashboard");
     }
   };
@@ -21,7 +34,7 @@ function LandingPage({ setUploadedFile }) {
       <div className="landing-container">
         <div className="intro-message">
             <h1 className="landing-title">
-                Welcome to <span className="app-gradient">App Name!</span>
+                Welcome to <span className="app-gradient">BudgetIQ!</span>
             </h1>
             <p className="landing-subtitle">This is a Procurement Spend Normalizer that extracts invoices, PDFs, spreadsheets, and etc and categorizes it in a smart way for easy readability and convenience.</p>
             <p className="landing-subtitle">
@@ -44,6 +57,11 @@ function LandingPage({ setUploadedFile }) {
         onClose={() => setShowUploadModal(false)}
         onFileSelect={handleFileSelect}
       />
+      {/*}
+      {documentData && (
+        <pre>{JSON.stringify(documentData, null, 2)}</pre>
+      )}
+      */}
     </>
   );
 }

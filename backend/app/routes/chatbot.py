@@ -1,31 +1,68 @@
-"""FastAPI routes for the procurement chatbot."""
+from fastapi import APIRouter, HTTPException, Request
+import os
+import httpx
+from google import generativeai  # or whatever the SDK name is
+router = APIRouter()
+import json
+from pydantic import BaseModel
 
-from __future__ import annotations
+# URL of the Pathway RAG REST API
+PATHWAY_RAG_URL = os.getenv("PATHWAY_RAG_URL", "http://localhost:8000")
 
-import logging
+generativeai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
-import requests
-from fastapi import APIRouter, HTTPException
+class ChatRequest(BaseModel):
+    prompt: str
 
-from backend.app.schemas.chatbot import ChatbotQueryRequest, ChatbotQueryResponse
-from backend.app.services.chatbot_service import ask_chatbot
+# Global store (in-memory)
+NORMALIZED_SPEND_DATA = []
 
-logger = logging.getLogger(__name__)
+#def set_spend_data(data):
+    #global NORMALIZED_SPEND_DATA
+    #NORMALIZED_SPEND_DATA = data
 
-router = APIRouter(prefix="/chatbot", tags=["chatbot"])
+@router.post("/chatbot/ask")
+async def ask_chatbot(request: Request):
+    body = await request.json()
+    prompt = body.get("prompt", "")
 
+    if not prompt:
+        return {"answer": "⚠️ Please ask a question about the spend data."}
 
-@router.post("/query", response_model=ChatbotQueryResponse)
-async def query_chatbot(payload: ChatbotQueryRequest) -> ChatbotQueryResponse:
-    """Relay the question to the Pathway RAG backend."""
+    global NORMALIZED_SPEND_DATA
+    if not NORMALIZED_SPEND_DATA:
+        return {"answer": "⚠️ No spend data available yet. Please upload a document first."}
+
+    # Convert spend data into a readable format for the model
+    spend_context = json.dumps(NORMALIZED_SPEND_DATA, indent=2)
+
+    system_prompt = f"""
+You are a financial assistant specialized in procurement spend analysis.
+You are given one company's normalized spend table extracted from a single uploaded document.
+Answer questions about the spending amounts, categories, or potential overspending.
+
+Use the data below to answer the user's question accurately:
+{spend_context}
+"""
 
     try:
-        return ask_chatbot(payload)
-    except requests.HTTPError as exc:  # type: ignore[attr-defined]
-        status_code = exc.response.status_code if exc.response else 502
-        detail = exc.response.text if exc.response else str(exc)
-        logger.exception("Chatbot HTTP error: %s", detail)
-        raise HTTPException(status_code=status_code, detail=detail)
-    except requests.RequestException as exc:
-        logger.exception("Chatbot request failure: %s", exc)
-        raise HTTPException(status_code=502, detail=str(exc))
+        # Initialize Gemini model
+        generativeai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
+        model = generativeai.GenerativeModel("gemini-2.5-flash")
+
+        # Combine system context and user prompt
+        response = model.generate_content([
+            {
+                "role": "user",
+                "parts": [
+                    {"text": f"{system_prompt}\n\nUser question: {prompt}"}
+                ]
+            }
+        ])
+
+        return {"answer": response.text}
+
+    except Exception as e:
+        print("Gemini chatbot error:", e)
+        raise HTTPException(status_code=500, detail=f"Gemini chatbot error: {e}")
+    
