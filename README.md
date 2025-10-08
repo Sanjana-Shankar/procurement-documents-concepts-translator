@@ -5,7 +5,7 @@
 Enterprises often receive **purchase orders and invoices** in mixed formats with inconsistent naming conventions (e.g., "Freight" vs. "Logistics" vs. "Shipping").  
 This app extracts data from scanned invoices, normalizes cost categories, and provides a clean **unified spend table** for finance teams to run analytics.  
 
-Additionally, the app includes a **Q&A agent** powered by Pathway’s Retrieval-Augmented Generation (RAG) framework, allowing users to clarify finance terms and navigate spend data interactively.
+Additionally, the app includes a **Q&A agent** powered by Google's GEMINI API calls, allowing users to clarify finance terms and navigate spend data interactively.
 
 ---
 > BudgetIQ Demo Video
@@ -37,7 +37,7 @@ With the Procurement Spend Normalizer, finance teams can turn chaotic piles of d
 
 ## 🚀 Features
 - **Document Extraction**: Uses [LandingAI](https://landing.ai/) to parse purchase orders and invoices from PDFs/scans.  
-- **Spend Normalization**: Maps inconsistent labels into unified categories (e.g., "Freight/Logistics/Shipping" → "Transportation").  
+- **Spend Normalization**: Maps inconsistent labels into unified categories (e.g., "Freight/Logistics/Shipping" → "Transportation") using Pathway API calls.  
 - **Q&A Agent**: Built with Google GEMINI API(https://gemini.google.com) calls, allowing users to ask questions about finance terminology and the normalized dataset, and built with [Inkeep](https://inkeep.com/) which enables multiple agents to answer clients questions and export data to Google Drive as needed.  
 - **Frontend Dashboard**: A React UI to upload invoices, visualize normalized data, and chat with the Q&A agent.  
 
