@@ -38,8 +38,7 @@ With the Procurement Spend Normalizer, finance teams can turn chaotic piles of d
 ## 🚀 Features
 - **Document Extraction**: Uses [LandingAI](https://landing.ai/) to parse purchase orders and invoices from PDFs/scans.  
 - **Spend Normalization**: Maps inconsistent labels into unified categories (e.g., "Freight/Logistics/Shipping" → "Transportation").  
-- **Q&A Agent**: Built with [Pathway RAG](https://pathway.com/), allowing users to ask questions about finance terminology and the normalized dataset, and built with [Inkeep](https://inkeep.com/) which enables multiple agents to answer clients questions and export data to Google Drive as needed.
-- **Database Integration**: Store structured spend data in either **MongoDB** or **PostgreSQL**.  
+- **Q&A Agent**: Built with Google GEMINI API(https://gemini.google.com) calls, allowing users to ask questions about finance terminology and the normalized dataset, and built with [Inkeep](https://inkeep.com/) which enables multiple agents to answer clients questions and export data to Google Drive as needed.  
 - **Frontend Dashboard**: A React UI to upload invoices, visualize normalized data, and chat with the Q&A agent.  
 
 ---
@@ -47,13 +46,14 @@ With the Procurement Spend Normalizer, finance teams can turn chaotic piles of d
 ## 🛠 Tech Stack
 - **Frontend**: React (TypeScript, Vite/CRA, TailwindCSS)  
 - **Backend**: FastAPI (Python)  
-- **Database**:  
+- **Potential Addition of Databases (Not implemented yet)**:  
   - Option A: MongoDB (via `pymongo`)  
   - Option B: PostgreSQL (via `SQLAlchemy` + `asyncpg` or `psycopg2-binary`)  
 - **AI/ML Services**:  
   - [LandingAI](https://landing.ai/) → OCR + Document parsing  
-  - [Pathway RAG](https://pathway.com/) → Finance Q&A agent
+  - [Pathway RAG](https://pathway.com/) → Normalization of the Finance terminology
   - [Inkeep](https://inkeep.com/) → MCP Server with multiple agents
+  - [Google GEMINI API](https://gemini.google.com) -> Q&A document Chatbot
 
 ---
 
